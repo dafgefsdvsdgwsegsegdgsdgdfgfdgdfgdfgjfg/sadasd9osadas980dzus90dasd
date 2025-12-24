@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Bewerbung - Lenny McCalley</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-black text-white overflow-x-hidden min-h-screen font-sans selection:bg-[#66e6ce] selection:text-black">
+
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="fixed inset-0 z-50 bg-black flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#66e6ce]/10 via-black to-black"></div>
+        <div class="text-center z-10 relative">
+            <div class="mb-8 relative">
+                <div class="w-24 h-24 border-4 border-[#66e6ce]/30 rounded-full animate-spin border-t-[#66e6ce] mx-auto"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <i data-lucide="shield" class="w-10 h-10 text-[#66e6ce] animate-pulse"></i>
+                </div>
+            </div>
+            <h2 class="text-3xl font-black text-white mb-2 tracking-widest glitch">SYSTEM WIRD GELADEN</h2>
+            <div class="w-64 h-1 bg-[#66e6ce]/20 mx-auto rounded-full overflow-hidden mt-4">
+                <div class="h-full bg-[#66e6ce] animate-[loading_2s_ease-in-out_infinite]"></div>
+            </div>
+            <p class="text-[#66e6ce] font-mono text-xs mt-4 animate-pulse">&gt; Lade Benutzerdaten...</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content" class="hidden min-h-screen relative">
+        
+        <!-- Background Effects -->
+        <div class="fixed inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute inset-0 bg-grid"></div>
+            <div class="scan-line"></div>
+            <div class="absolute top-0 left-0 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="relative z-10">
+            <!-- Header -->
+            <header class="border-b border-[#66e6ce]/30 backdrop-blur-xl bg-black/50 sticky top-0 z-40">
+                <div class="max-w-7xl mx-auto px-6 py-8">
+                    <div class="flex items-center justify-between mb-6">
+                        <div>
+                            <div class="text-sm text-[#66e6ce] font-mono tracking-widest mb-2">
+                                &gt; Lenny McCalley
+                            </div>
+                            <h1 class="text-5xl font-black text-white glitch">
+                                GRAND ROLEPLAY
+                                <span class="text-[#66e6ce]"> DE01</span>
+                            </h1>
+                            <p class="text-[#66e6ce]/70 font-mono text-sm mt-2">
+                                &gt; Assistent Bewerbung
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-2 flex-wrap">
+                        <button data-tab="profile" class="font-mono text-xs md:text-sm px-4 py-2 border border-[#66e6ce] transition-all duration-300 neon-border bg-[#66e6ce]/20 text-[#66e6ce] shadow-lg">
+                            [ Informationen ]
+                        </button>
+                        <button data-tab="experience" class="font-mono text-xs md:text-sm px-4 py-2 border border-[#66e6ce] transition-all duration-300 text-[#66e6ce]/60 hover:text-[#66e6ce] hover:border-[#66e6ce]/60">
+                            [ Zusätzliche Informationen ]
+                        </button>
+                        <button data-tab="closing" class="font-mono text-xs md:text-sm px-4 py-2 border border-[#66e6ce] transition-all duration-300 text-[#66e6ce]/60 hover:text-[#66e6ce] hover:border-[#66e6ce]/60">
+                            [ Schlusswort ]
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <main class="max-w-7xl mx-auto px-6 py-12">
+                
+                <!-- Profile Section -->
+                <div id="section-profile" class="content-section space-y-8 animate-fadeIn">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Profile Card 1 -->
+                        <div class="neon-border p-6 bg-black/40 backdrop-blur-sm relative overflow-hidden group">
+                            <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#66e6ce] to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            <div class="flex items-center justify-between mb-4">
+                                <p class="text-[#66e6ce]/70 font-mono text-xs tracking-widest">Dein Reallife Name:</p>
+                                <i data-lucide="user" class="w-5 h-5 text-[#66e6ce]/50 group-hover:text-[#66e6ce] transition-colors"></i>
+                            </div>
+                            <p class="text-white text-2xl font-black tracking-tight">Lenny McCalley</p>
+                        </div>
+                        <!-- Profile Card 2 -->
+                        <div class="neon-border p-6 bg-black/40 backdrop-blur-sm relative overflow-hidden group">
+                            <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#66e6ce] to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            <div class="flex items-center justify-between mb-4">
+                                <p class="text-[#66e6ce]/70 font-mono text-xs tracking-widest">Dein Alter:</p>
+                                <i data-lucide="calendar" class="w-5 h-5 text-[#66e6ce]/50 group-hover:text-[#66e6ce] transition-colors"></i>
+                            </div>
+                            <p class="text-white text-2xl font-black tracking-tight">17</p>
+                        </div>
+                        <!-- Profile Card 3 -->
+                        <div class="neon-border p-6 bg-black/40 backdrop-blur-sm relative overflow-hidden group">
+                            <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#66e6ce] to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            <div class="flex items-center justify-between mb-4">
+                                <p class="text-[#66e6ce]/70 font-mono text-xs tracking-widest">Discord Name:</p>
+                                <i data-lucide="message-square" class="w-5 h-5 text-[#66e6ce]/50 group-hover:text-[#66e6ce] transition-colors"></i>
+                            </div>
+                            <p class="text-white text-2xl font-black tracking-tight">lennydev.</p>
+                        </div>
+                        <!-- Profile Card 4 -->
+                        <div class="neon-border p-6 bg-black/40 backdrop-blur-sm relative overflow-hidden group">
+                            <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#66e6ce] to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            <div class="flex items-center justify-between mb-4">
+                                <p class="text-[#66e6ce]/70 font-mono text-xs tracking-widest">Dein Nickname:</p>
+                                <i data-lucide="gamepad-2" class="w-5 h-5 text-[#66e6ce]/50 group-hover:text-[#66e6ce] transition-colors"></i>
+                            </div>
+                            <p class="text-white text-2xl font-black tracking-tight">Lenny</p>
+                        </div>
+                    </div>
+                    
+                    <div class="neon-border p-8 bg-black/40 backdrop-blur-sm relative overflow-hidden">
+                        <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#66e6ce] to-transparent"></div>
+                        <div class="font-mono text-[#66e6ce] text-center text-2xl font-bold tracking-widest">
+                            Deine ID: 179418
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience Section -->
+                <div id="section-experience" class="content-section space-y-8 hidden">
+                    
+                    <!-- Question 1 -->
+                    <div class="neon-border p-8 bg-black/40 backdrop-blur-sm relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-[#66e6ce]/5 rounded-full blur-2xl group-hover:bg-[#66e6ce]/10 transition-all"></div>
+                        <div class="relative z-10">
+                            <div class="flex items-start justify-between mb-4">
+                                <h3 class="text-[#66e6ce] font-mono text-sm font-bold tracking-widest">1. Zu welchen Zeiten bist du online?</h3>
+                            </div>
+                            <p class="text-white/70 leading-relaxed">Täglich 16:00 bis 22:00 | Wochenende: Ganztägig</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 (Table) -->
+                    <div class="neon-border p-8 bg-black/40 backdrop-blur-sm relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-[#66e6ce]/5 rounded-full blur-2xl group-hover:bg-[#66e6ce]/10 transition-all"></div>
+                        <div class="relative z-10">
+                            <div class="flex items-start justify-between mb-6">
+                                <h3 class="text-[#66e6ce] font-mono text-sm font-bold tracking-widest">2. Wie schätzt du dein Wissen im Bereich Regelwerk ein?</h3>
+                            </div>
+                            <p class="text-white/70 leading-relaxed mb-6">Ich schätze meine Kenntnisse im Regelwerk wie folgt ein:</p>
+                            
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-left border-collapse">
+                                    <thead>
+                                        <tr class="border-b border-[#66e6ce]/30">
+                                            <th class="py-3 text-[#66e6ce] font-mono text-xs tracking-widest">REGELWERK</th>
+                                            <th class="py-3 text-[#66e6ce] font-mono text-xs tracking-widest text-right">WISSEN</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-white/80 font-mono text-sm">
+                                        <!-- Rows will be static here for simplicity, or could be generated by JS -->
+                                        <tr class="border-b border-[#66e6ce]/10 hover:bg-[#66e6ce]/5 transition-colors">
+                                            <td class="py-3">Leader-Regeln</td>
+                                            <td class="py-3 text-right">
+                                                <div class="flex items-center justify-end gap-3">
+                                                    <div class="w-24 h-1 bg-[#66e6ce]/20 rounded-full overflow-hidden">
+                                                        <div class="progress-bar h-full bg-[#66e6ce] shadow-[0_0_10px_#66e6ce] transition-all duration-500" style="width: 0%" data-width="60%"></div>
+                                                    </div>
+                                                    <span>6/10</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-b border-[#66e6ce]/10 hover:bg-[#66e6ce]/5 transition-colors">
+                                            <td class="py-3">Regeln der legalen Organisationen</td>
+                                            <td class="py-3 text-right">
+                                                <div class="flex items-center justify-end gap-3">
+                                                    <div class="w-24 h-1 bg-[#66e6ce]/20 rounded-full overflow-hidden">
+                                                        <div class="progress-bar h-full bg-[#66e6ce] shadow-[0_0_10px_#66e6ce] transition-all duration-500" style="width: 0%" data-width="80%"></div>
+                                                    </div>
+                                                    <span>8/10</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-b border-[#66e6ce]/10 hover:bg-[#66e6ce]/5 transition-colors">
+                                            <td class="py-3">Allgemeine Regeln</td>
+                                            <td class="py-3 text-right">
+                                                <div class="flex items-center justify-end gap-3">
+                                                    <div class="w-24 h-1 bg-[#66e6ce]/20 rounded-full overflow-hidden">
+                                                        <div class="progress-bar h-full bg-[#66e6ce] shadow-[0_0_10px_#66e6ce] transition-all duration-500" style="width: 0%" data-width="90%"></div>
+                                                    </div>
+                                                    <span>9/10</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-b border-[#66e6ce]/10 hover:bg-[#66e6ce]/5 transition-colors">
+                                            <td class="py-3">GreenZone-Regeln</td>
+                                            <td class="py-3 text-right">
+                                                <div class="flex items-center justify-end gap-3">
+                                                    <div class="w-24 h-1 bg-[#66e6ce]/20 rounded-full overflow-hidden">
+                                                        <div class="progress-bar h-full bg-[#66e6ce] shadow-[0_0_10px_#66e6ce] transition-all duration-500" style="width: 0%" data-width="100%"></div>
+                                                    </div>
+                                                    <span>10/10</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-b border-[#66e6ce]/10 hover:bg-[#66e6ce]/5 transition-colors">
+                                            <td class="py-3">Ghetto-Regeln</td>
+                                            <td class="py-3 text-right">
+                                                <div class="flex items-center justify-end gap-3">
+                                                    <div class="w-24 h-1 bg-[#66e6ce]/20 rounded-full overflow-hidden">
+                                                        <div class="progress-bar h-full bg-[#66e6ce] shadow-[0_0_10px_#66e6ce] transition-all duration-500" style="width: 0%" data-width="80%"></div>
+                                                    </div>
+                                                    <span>8/10</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-b border-[#66e6ce]/10 hover:bg-[#66e6ce]/5 transition-colors">
+                                            <td class="py-3">Event-Regeln</td>
+                                            <td class="py-3 text-right">
+                                                <div class="flex items-center justify-end gap-3">
+                                                    <div class="w-24 h-1 bg-[#66e6ce]/20 rounded-full overflow-hidden">
+                                                        <div class="progress-bar h-full bg-[#66e6ce] shadow-[0_0_10px_#66e6ce] transition-all duration-500" style="width: 0%" data-width="70%"></div>
+                                                    </div>
+                                                    <span>7/10</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-b border-[#66e6ce]/10 hover:bg-[#66e6ce]/5 transition-colors">
+                                            <td class="py-3">Wahl-Regeln</td>
+                                            <td class="py-3 text-right">
+                                                <div class="flex items-center justify-end gap-3">
+                                                    <div class="w-24 h-1 bg-[#66e6ce]/20 rounded-full overflow-hidden">
+                                                        <div class="progress-bar h-full bg-[#66e6ce] shadow-[0_0_10px_#66e6ce] transition-all duration-500" style="width: 0%" data-width="65%"></div>
+                                                    </div>
+                                                    <span>6,5/10</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="neon-border p-8 bg-black/40 backdrop-blur-sm relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-[#66e6ce]/5 rounded-full blur-2xl group-hover:bg-[#66e6ce]/10 transition-all"></div>
+                        <div class="relative z-10">
+                            <div class="flex items-start justify-between mb-6">
+                                <h3 class="text-[#66e6ce] font-mono text-sm font-bold tracking-widest">3. Welche Erfahrungen hattest du in offiziellen sowie inoffiziellen Organisationen?</h3>
+                            </div>
+                            
+                            <div class="space-y-6">
+                                <div>
+                                    <h4 class="text-white font-bold mb-3 border-b border-[#66e6ce]/30 pb-2 inline-block">Offizielle Organisationen</h4>
+                                    <ul class="space-y-2 text-white/80 font-mono text-sm">
+                                        <li class="flex items-center gap-2"><span class="text-[#66e6ce]">&gt;</span> FIB (Rank 26) Chief of Staff - unter Steve Cock</li>
+                                        <li class="flex items-center gap-2"><span class="text-[#66e6ce]">&gt;</span> FIB (Rank 25) Division Chief - unter Maximilian Bianchi</li>
+                                        <li class="flex items-center gap-2"><span class="text-[#66e6ce]">&gt;</span> FIB (Rank 20) Deputy Division Chief - unter Michael Denver</li>
+                                        <li class="flex items-center gap-2"><span class="text-[#66e6ce]">&gt;</span> SAHP (Rank 23) State Prison Overseer - unter Vollmehr Reinholzen</li>
+                                        <li class="flex items-center gap-2"><span class="text-[#66e6ce]">&gt;</span> SAHP (Rank 11) State Sheriff - unter Maik Bosa</li>
+                                        <li class="flex items-center gap-2"><span class="text-[#66e6ce]">&gt;</span> Lifeinvader Redakteur - unter ...</li>
+                                        <li class="flex items-center gap-2"><span class="text-[#66e6ce]">&gt;</span> USSS (Rank 17) Detection Chief - unter Nico Schlumpf</li>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <h4 class="text-white font-bold mb-3 border-b border-[#66e6ce]/30 pb-2 inline-block">Illegale & Inoffizielle Organisationen</h4>
+                                    <p class="text-white/70">Wenig Erfahrung in illegalen sowie inoffiziellen Organisationen.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div class="neon-border p-8 bg-black/40 backdrop-blur-sm relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-40 h-40 bg-emerald-500/5 rounded-full blur-3xl"></div>
+                        <div class="relative z-10">
+                            <div class="flex items-start gap-4 mb-4">
+                                <div class="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 bg-emerald-500/30 border border-emerald-500">
+                                    <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+                                </div>
+                                <h3 class="text-[#66e6ce] font-mono text-sm font-bold tracking-widest flex-1">4. Wärst du bereit, das RP-Leben zu verlassen, um Admin zu werden?</h3>
+                            </div>
+                            <p class="text-white/70 leading-relaxed ml-10">Ich denke das Wort "DIREKT" sagt genug aus.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 5 -->
+                    <div class="neon-border p-8 bg-black/40 backdrop-blur-sm relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-40 h-40 bg-emerald-500/5 rounded-full blur-3xl"></div>
+                        <div class="relative z-10">
+                            <div class="flex items-start gap-4 mb-4">
+                                <div class="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 bg-emerald-500/30 border border-emerald-500">
+                                    <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+                                </div>
+                                <h3 class="text-[#66e6ce] font-mono text-sm font-bold tracking-widest flex-1">5. Wärst du bereit, dein Unternehmen zu verkaufen? (Es ist Verboten, ein Geschäft zu haben, während man Admin ist)</h3>
+                            </div>
+                            <p class="text-white/70 leading-relaxed ml-10">Ja, ich wäre bereit mein Unternehmen zu verkaufen, wenn ich eins hätte.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Closing Section -->
+                <div id="section-closing" class="content-section space-y-8 hidden">
+                    <div class="neon-border p-8 bg-black/40 backdrop-blur-sm relative overflow-hidden">
+                        <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#66e6ce] to-transparent"></div>
+                        <div class="relative z-10 text-center">
+                            <h3 class="text-[#66e6ce] font-mono text-xl font-bold tracking-widest mb-6">SCHLUSSWORT</h3>
+                            <p class="text-white/80 leading-relaxed max-w-3xl mx-auto mb-8">
+                                Vielen Dank für das Lesen meiner Bewerbung. Ich hoffe, ich konnte euch von meinen Fähigkeiten und meiner Motivation überzeugen. Ich würde mich sehr über ein persönliches Gespräch freuen, um offene Fragen zu klären und mich persönlich vorzustellen.
+                            </p>
+                            <a href="https://gta5grand.com/forum/" target="_blank" class="inline-block border border-[#66e6ce] px-8 py-3 text-[#66e6ce] font-mono text-sm tracking-widest hover:bg-[#66e6ce]/10 transition-colors cursor-pointer">
+                                Zurück zur Bewerbung
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+
+            <footer class="border-t border-[#66e6ce]/30 backdrop-blur-xl bg-black/50 mt-16">
+                <div class="max-w-7xl mx-auto px-6 py-8 text-center">
+                    <p class="text-[#66e6ce]/50 font-mono text-sm">
+                        &gt; Grand RolePlay DE01 | Assistent Bewerbung
+                    </p>
+                    <p class="text-[#66e6ce]/30 font-mono text-xs mt-2">
+                        &gt; Warten auf Bearbeitung
+                    </p>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
